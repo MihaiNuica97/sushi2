@@ -13,7 +13,6 @@ public class Launcher {
 			System.out.println("Running client");
 			ClientApplication.main(argv);
 		} else {
-		    System.out.println("pula3");
 			System.out.println("Running server");
 			ServerApplication.main(argv);
 		}
