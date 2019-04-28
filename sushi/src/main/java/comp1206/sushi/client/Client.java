@@ -70,21 +70,18 @@ public class Client implements ClientInterface
     @Override
     public Restaurant getRestaurant()
     {
-        // TODO Auto-generated method stub
         return restaurant;
     }
     
     @Override
     public String getRestaurantName()
     {
-        // TODO Auto-generated method stub
         return restaurant.getName();
     }
     
     @Override
     public Postcode getRestaurantPostcode()
     {
-        // TODO Auto-generated method stub
         return restaurant.getLocation();
     }
     
@@ -124,14 +121,12 @@ public class Client implements ClientInterface
     @Override
     public List<Postcode> getPostcodes()
     {
-        // TODO Auto-generated method stub
         return postcodes;
     }
     
     @Override
     public List<Dish> getDishes()
     {
-        // TODO Auto-generated method stub
         return dishes;
     }
     
@@ -235,14 +230,12 @@ public class Client implements ClientInterface
     @Override
     public void addUpdateListener(UpdateListener listener)
     {
-        // TODO Auto-generated method stub
         listeners.add(listener);
     }
     
     @Override
     public void notifyUpdate()
     {
-        // TODO Auto-generated method stub
         for(UpdateListener listener : listeners)
         {
             listener.updated(new UpdateEvent());

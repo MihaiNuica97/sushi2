@@ -25,7 +25,8 @@ public class Configuration
     private ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
     private ArrayList<User> users = new ArrayList<User>();
     private ArrayList<Postcode> postcodes = new ArrayList<Postcode>();
-    
+    private HashMap<Dish, Number> dishStock = new HashMap<>();
+    private HashMap<Ingredient, Number> ingredientStock = new HashMap<>();
     
     public Configuration(String path)
     {
@@ -103,12 +104,13 @@ public class Configuration
         if(findDish(itemStr)!= null)
         {
             System.out.println("Restocking dish: " + itemStr + " by amount: " + stockCount );
+            dishStock.put(findDish(itemStr),stockCount);
         }
         else if(findIngredient(itemStr)!= null)
         {
             System.out.println("Restocking ingredient: " + itemStr + " by amount: " + stockCount );
+            ingredientStock.put(findIngredient(itemStr),stockCount);
         }
-        //TODO: implement stocking from cfg
     }
     
     private void parseOrder(String[] lineArray)
@@ -282,5 +284,8 @@ public class Configuration
         return postcodes;
     }
     
+    public HashMap<Dish,Number> getDishStock(){return dishStock;}
+    
+    public HashMap<Ingredient, Number> getIngredientStock (){return ingredientStock;}
     
 }
