@@ -21,6 +21,7 @@ public class Order extends Model
         this.name = dtf.format(now);
         this.user = user;
         this.order = order;
+        this.status = "Incomplete";
     }
     
     public Order(User user)
@@ -30,6 +31,7 @@ public class Order extends Model
         this.name = dtf.format(now);
         this.user = user;
         order = new HashMap<>();
+        this.status = "Incomplete";
     }
     
     public Order()
@@ -73,4 +75,14 @@ public class Order extends Model
         this.status = status;
     }
     
+    public Number getOrderCost()
+    {
+        float cost = 0;
+        
+        for(Number price: order.values())
+        {
+            cost += price.floatValue();
+        }
+        return (Number)cost;
+    }
 }
