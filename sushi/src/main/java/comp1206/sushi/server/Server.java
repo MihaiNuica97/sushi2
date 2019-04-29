@@ -28,7 +28,7 @@ public class Server implements ServerInterface {
 	public ArrayList<Postcode> postcodes = new ArrayList<Postcode>();
 	private ArrayList<UpdateListener> listeners = new ArrayList<UpdateListener>();
 	private Configuration config;
-	private String path = "C:\\UNI\\sushi2\\sushi\\Configuration.txt";
+	private String path = "sushi/Configuration.txt";
 	
 	StockManagement stockManagement = new StockManagement(this);
 	

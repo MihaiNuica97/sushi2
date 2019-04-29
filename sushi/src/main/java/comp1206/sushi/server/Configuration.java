@@ -31,7 +31,8 @@ public class Configuration
     public Configuration(String path)
     {
         this.path = path;
-        cfgFile = new File(path);
+        cfgFile = new File(this.path);
+        System.out.println(cfgFile.getAbsolutePath());
         try
         {
             reader = new BufferedReader(new FileReader(cfgFile));
