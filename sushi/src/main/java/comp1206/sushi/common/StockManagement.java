@@ -3,6 +3,7 @@ package comp1206.sushi.common;
 import comp1206.sushi.server.Server;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class StockManagement
 {
@@ -17,24 +18,46 @@ public class StockManagement
         ingredientStock = new HashMap<>();
     }
     
-    public void verifyIngredientsStock()
+    public synchronized void verifyIngredientsStock()
     {
         for(Ingredient ingredient: ingredientStock.keySet())
         {
-            if(ingredientStock.get(ingredient).intValue() < ingredient.getRestockThreshold().intValue())
+            if(ingredientStock.get(ingredient).floatValue() < ingredient.getRestockThreshold().floatValue())
             {
-                System.out.println(ingredient.getName() + " needs to be restocked!");
+                Random random = new Random();
+                try
+                {
+                    Thread.sleep(random.nextInt(40) + 2000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                ingredientStock.put(ingredient,ingredientStock.get(ingredient).floatValue() + ingredient.getRestockAmount().floatValue());
+                System.out.println(ingredient.getName() + " has been restocked!");
+                server.notifyUpdate();
+                verifyIngredientsStock();
             }
         }
     }
     
-    public void verifyDishStock()
+    public synchronized void verifyDishStock()
     {
         for(Dish dish: dishStock.keySet())
         {
-            if(dishStock.get(dish).intValue() < dish.getRestockThreshold().intValue())
+            if(dishStock.get(dish).floatValue() < dish.getRestockThreshold().floatValue())
             {
-                System.out.println(dish.getName() + " needs to be restocked!");
+                Random random = new Random();
+                try
+                {
+                    Thread.sleep(random.nextInt(40) + 2000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                dishStock.put(dish,dishStock.get(dish).floatValue() + dish.getRestockAmount().floatValue());
+                System.out.println(dish.getName() + " has been restocked!");
+                server.notifyUpdate();
+                verifyDishStock();
             }
         }
     }
@@ -42,12 +65,10 @@ public class StockManagement
     public void updateDishStock(Dish dish, Number stock)
     {
         dishStock.put(dish,stock);
-        verifyDishStock();
     }
     public void updateIngredientStock(Ingredient ingredient, Number stock)
     {
         ingredientStock.put(ingredient,stock);
-        verifyIngredientsStock();
     }
     public HashMap<Dish, Number> getDishStock()
     {
@@ -65,4 +86,6 @@ public class StockManagement
     {
         this.ingredientStock = ingredientStock;
     }
+    
+
 }

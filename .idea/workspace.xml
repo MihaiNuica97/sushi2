@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ff6d27-02bc-465b-aaa5-ce9f14dda49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/Configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/Configuration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/server/Server.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sushi/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,24 +18,40 @@
     <favorites_list name="sushi2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46279493">
+    <splitter split-orientation="horizontal" split-proportion="0.522686">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+                <state relative-caret-position="-98">
+                  <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#StockManagement#0;class#StockManagement#0" />
-                    <element signature="method#setDishStock#0;class#StockManagement#0" />
-                    <element signature="method#setIngredientStock#0;class#StockManagement#0" />
+                    <element signature="e#1492#1493#0" expanded="true" />
+                    <element signature="e#1533#1534#0" expanded="true" />
+                    <element signature="e#1614#1615#0" expanded="true" />
+                    <element signature="e#1667#1668#0" expanded="true" />
                     <element signature="e#844#877#1" />
-                    <element signature="e#1481#1482#0" expanded="true" />
+                    <element signature="e#2418#2419#0" expanded="true" />
                     <element signature="e#942#981#1" />
-                    <element signature="e#1585#1586#0" expanded="true" />
+                    <element signature="e#2522#2523#0" expanded="true" />
                     <element signature="method#setIngredientStock#0;class#StockManagement#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="223">
+                  <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#805#806#0" expanded="true" />
+                    <element signature="e#822#823#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -52,8 +64,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret line="267" column="8" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
+                <state relative-caret-position="75">
+                  <caret line="146" column="11" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="11" />
                   <folding>
                     <element signature="e#3256#3257#0" expanded="true" />
                     <element signature="e#3279#3280#0" expanded="true" />
@@ -173,18 +185,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loaded</find>
-      <find>loadConf</find>
-      <find>restaurant</find>
       <find>addIngre</find>
       <find>addDish</find>
       <find>Ingr</find>
       <find>addstaff</find>
       <find>adddron</find>
       <find>dataSource</find>
-      <find>add</find>
       <find>user</find>
-      <find>staff</find>
       <find>config</find>
       <find>orders</find>
       <find>basket</find>
@@ -202,7 +209,12 @@
       <find>dishst</find>
       <find>loadConfiguration</find>
       <find>level</find>
+      <find>staff</find>
       <find>load</find>
+      <find>random</find>
+      <find>addsta</find>
+      <find>add</find>
+      <find>intval</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,8 +231,9 @@
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/DishesStock.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/IngredientsStock.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" />
-        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" />
       </list>
     </option>
   </component>
@@ -430,7 +443,7 @@
       <workItem from="1555343196509" duration="3752000" />
       <workItem from="1555424076894" duration="1619000" />
       <workItem from="1556457385975" duration="12000" />
-      <workItem from="1556457756003" duration="16571000" />
+      <workItem from="1556457756003" duration="21955000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1555083392769</created>
@@ -502,11 +515,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556470933232</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Stock Management implemented">
+      <created>1556476030170</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556476030170</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56210000" />
+    <option name="totallyTimeSpent" value="61594000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,7 +539,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6046025" visible="true" weight="0.16641453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -531,7 +550,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.25040916" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.25040916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -541,7 +560,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50378215" side_tool="true" weight="0.29787233" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49621785" weight="0.27986908" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.49621785" visible="true" weight="0.40752864" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,7 +580,8 @@
     <MESSAGE value="initial" />
     <MESSAGE value="implemented read from cfg functionality" />
     <MESSAGE value="Client window fully implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client window fully implemented" />
+    <MESSAGE value="Stock Management implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stock Management implemented" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/ServerApplication.java">
@@ -792,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="267" column="8" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
+        <state relative-caret-position="75">
+          <caret line="146" column="11" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="11" />
           <folding>
             <element signature="e#3256#3257#0" expanded="true" />
             <element signature="e#3279#3280#0" expanded="true" />
@@ -807,19 +827,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        <state relative-caret-position="-98">
+          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#StockManagement#0;class#StockManagement#0" />
-            <element signature="method#setDishStock#0;class#StockManagement#0" />
-            <element signature="method#setIngredientStock#0;class#StockManagement#0" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
             <element signature="e#844#877#1" />
-            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#2418#2419#0" expanded="true" />
             <element signature="e#942#981#1" />
-            <element signature="e#1585#1586#0" expanded="true" />
+            <element signature="e#2522#2523#0" expanded="true" />
             <element signature="method#setIngredientStock#0;class#StockManagement#0" />
           </folding>
         </state>

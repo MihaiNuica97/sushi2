@@ -149,9 +149,10 @@ public class Server implements ServerInterface {
 
 	@Override
 	public Staff addStaff(String name) {
-		Staff mock = new Staff(name);
-		this.staff.add(mock);
-		return mock;
+		Staff thisStaff = new Staff(name);
+		staff.add(thisStaff);
+		thisStaff.verifyStock(stockManagement,thisStaff);
+		return thisStaff;
 	}
 
 	@Override
@@ -261,7 +262,10 @@ public class Server implements ServerInterface {
 		drones = config.getDrones();
 		ingredients = config.getIngredients();
 		orders = config.getOrders();
-		staff = config.getStaff();
+		for (Staff thisStaff: config.getStaff())
+		{
+			addStaff(thisStaff.getName());
+		}
 		suppliers = config.getSuppliers();
 		users = config.getUsers();
 		postcodes = config.getPostcodes();
