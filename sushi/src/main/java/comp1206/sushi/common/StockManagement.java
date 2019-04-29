@@ -35,7 +35,6 @@ public class StockManagement
                 ingredientStock.put(ingredient,ingredientStock.get(ingredient).floatValue() + ingredient.getRestockAmount().floatValue());
                 System.out.println(ingredient.getName() + " has been restocked!");
                 server.notifyUpdate();
-                verifyIngredientsStock();
             }
         }
     }
@@ -46,18 +45,9 @@ public class StockManagement
         {
             if(dishStock.get(dish).floatValue() < dish.getRestockThreshold().floatValue())
             {
-                Random random = new Random();
-                try
-                {
-                    Thread.sleep(random.nextInt(40) + 2000);
-                } catch (InterruptedException e)
-                {
-                    e.printStackTrace();
-                }
                 dishStock.put(dish,dishStock.get(dish).floatValue() + dish.getRestockAmount().floatValue());
                 System.out.println(dish.getName() + " has been restocked!");
                 server.notifyUpdate();
-                verifyDishStock();
             }
         }
     }

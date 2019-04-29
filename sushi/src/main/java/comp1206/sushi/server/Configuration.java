@@ -58,7 +58,6 @@ public class Configuration
     
     private void parseLines()
     {
-        System.out.println(currentLine);
         lineArray = currentLine.split(":");
         String category = lineArray[0].toLowerCase();
         switch (category)

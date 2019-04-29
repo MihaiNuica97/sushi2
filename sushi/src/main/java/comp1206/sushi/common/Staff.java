@@ -56,7 +56,16 @@ public class Staff extends Model {
 					if(rand.nextBoolean())
 					{
 						staff.setStatus("Working");
+						System.out.println(staff.getName()+" is verifying stocks...");
+                        try
+                        {
+                            Thread.sleep(rand.nextInt(40001) + 2000);
+                        } catch (InterruptedException e)
+                        {
+                            e.printStackTrace();
+                        }
 						stockManagement.verifyDishStock();
+                        this.run();
 					}
 					else
 					{
