@@ -1,5 +1,7 @@
 package comp1206.sushi.server;
 
+import java.io.*;
+import java.net.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,11 +11,12 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import comp1206.sushi.client.Client;
 import comp1206.sushi.common.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
  
-public class Server implements ServerInterface {
+public class Server implements ServerInterface, Serializable {
 
     private static final Logger logger = LogManager.getLogger("Server");
 	
@@ -29,12 +32,21 @@ public class Server implements ServerInterface {
 	private ArrayList<UpdateListener> listeners = new ArrayList<UpdateListener>();
 	private Configuration config;
 	private String path = "sushi/Configuration.txt";
+	private ServerSocket serverSocket;
+	private StockManagement stockManagement = new StockManagement(this);
+	private Comms comms;
 	
-	StockManagement stockManagement = new StockManagement(this);
-	
-	public Server() {
+	public Server()
+	{
         logger.info("Starting up server...");
 		loadConfiguration(path);
+		comms = new Comms(1030, this);
+		comms.openServerSocket();
+		serverSocket = comms.getServerSocket();
+		comms.openIncomingCommsSocket();
+		
+		
+		
 	}
 	
 	@Override
@@ -44,16 +56,18 @@ public class Server implements ServerInterface {
 
 	@Override
 	public Dish addDish(String name, String description, Number price, Number restockThreshold, Number restockAmount) {
+		
 		Dish newDish = new Dish(name,description,price,restockThreshold,restockAmount);
 		this.dishes.add(newDish);
+		comms.broadcastMessage(new Message(newDish,"Add Dish"));
 		this.notifyUpdate();
 		return newDish;
 	}
 	
 	@Override
 	public void removeDish(Dish dish) {
+		comms.broadcastMessage(new Message(dish,"Remove Dish"));
 		this.dishes.remove(dish);
-		
 		this.notifyUpdate();
 	}
 
@@ -168,15 +182,20 @@ public class Server implements ServerInterface {
 
 	@Override
 	public void removeOrder(Order order) {
-		int index = this.orders.indexOf(order);
-		this.orders.remove(index);
+		User user = order.getUser();
+		System.out.println("Deleting order");
+		if(user != null)
+		{
+			comms.sendMessageToUser(order.getUser(),new Message(order,"Remove Order"));
+		}
+		orders.remove(order);
 		this.notifyUpdate();
 	}
 	
 	@Override
-	public Number getOrderCost(Order order) {
-		Random random = new Random();
-		return random.nextInt(100);
+	public Number getOrderCost(Order order)
+	{
+		return order.getOrderCost();
 	}
 
 	@Override
@@ -229,6 +248,7 @@ public class Server implements ServerInterface {
 	public Postcode addPostcode(String code) {
 		Postcode mock = new Postcode(code);
 		this.postcodes.add(mock);
+		comms.broadcastMessage(mock);
 		this.notifyUpdate();
 		return mock;
 	}
@@ -306,12 +326,15 @@ public class Server implements ServerInterface {
 
 	@Override
 	public String getOrderStatus(Order order) {
-		Random rand = new Random();
-		if(rand.nextBoolean()) {
-			return "Complete";
-		} else {
-			return "Pending";
+		for(Order thisOrder: orders)
+		{
+			if(thisOrder.getName().equals(order.getName()))
+			{
+				comms.sendMessageToUser(order.getUser(),new Message(thisOrder,"Update Order"));
+				return thisOrder.getStatus();
+			}
 		}
+		return null;
 	}
 	
 	@Override

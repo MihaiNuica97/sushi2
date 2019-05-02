@@ -2,10 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ff6d27-02bc-465b-aaa5-ce9f14dda49c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientComms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Comms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/Configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/Configuration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/progress.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Postcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Postcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Ingredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Ingredient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Postcode.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/Postcode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/common/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/classes/comp1206/sushi/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/surefire-reports/TEST-comp1206.sushi.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/surefire-reports/TEST-comp1206.sushi.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/surefire-reports/comp1206.sushi.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/surefire-reports/comp1206.sushi.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sushi/target/sushi-2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sushi/target/sushi-2.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sushi/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,62 +37,68 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sushi2$ClientApplication.ic" NAME="ClientApplication Coverage Results" MODIFIED="1556764330606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>comp1206.sushi.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="sushi2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4722475">
+    <splitter split-orientation="horizontal" split-proportion="0.47309992">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#StockManagement#0;class#StockManagement#0" />
-                    <element signature="e#2038#2039#0" expanded="true" />
-                    <element signature="e#2070#2071#0" expanded="true" />
-                    <element signature="e#2136#2137#0" expanded="true" />
-                    <element signature="e#2174#2175#0" expanded="true" />
-                    <element signature="method#setIngredientStock#0;class#StockManagement#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java">
+            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="295">
-                  <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+                <state relative-caret-position="4676">
+                  <caret line="349" column="4" lean-forward="true" selection-start-line="349" selection-start-column="4" selection-end-line="349" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#4570#4571#0" expanded="true" />
+                    <element signature="e#4602#4603#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientComms.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="680">
+                  <caret line="105" column="4" lean-forward="true" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#readLines#0;class#Configuration#0" />
-                    <element signature="method#parseLines#0;class#Configuration#0" />
-                    <element signature="method#parseStock#0;class#Configuration#0" />
-                    <element signature="method#parseUser#0;class#Configuration#0" />
-                    <element signature="method#parseDish#0;class#Configuration#0" />
-                    <element signature="method#parseIngredient#0;class#Configuration#0" />
-                    <element signature="method#parseSupplier#0;class#Configuration#0" />
-                    <element signature="method#parseRestaurant#0;class#Configuration#0" />
-                    <element signature="method#findIngredient#0;class#Configuration#0" />
-                    <element signature="method#findDish#0;class#Configuration#0" />
-                    <element signature="method#findPostcode#0;class#Configuration#0" />
+                    <element signature="method#ClientComms#0;class#ClientComms#0" />
+                    <element signature="method#openSocket#0;class#ClientComms#0" />
+                    <element signature="method#sendObject#0;class#ClientComms#0" />
+                    <element signature="method#listenForMessages#0;class#ClientComms#0" />
+                    <element signature="class#ServerConnection#0;class#ClientComms#0" />
+                    <element signature="method#ServerConnection#0;class#ServerConnection#0;class#ClientComms#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Message.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="442">
+                  <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -81,40 +110,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="385">
-                  <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+                <state relative-caret-position="341">
+                  <caret line="256" column="66" selection-start-line="256" selection-start-column="63" selection-end-line="256" selection-end-column="66" />
                   <folding>
-                    <element signature="e#676#677#0" expanded="true" />
-                    <element signature="e#712#713#0" expanded="true" />
-                    <element signature="e#746#747#0" expanded="true" />
-                    <element signature="e#773#774#0" expanded="true" />
-                    <element signature="e#821#822#0" expanded="true" />
-                    <element signature="e#852#853#0" expanded="true" />
-                    <element signature="e#885#886#0" expanded="true" />
-                    <element signature="e#912#913#0" expanded="true" />
-                    <element signature="e#960#961#0" expanded="true" />
-                    <element signature="e#982#983#0" expanded="true" />
-                    <element signature="e#1322#1323#0" expanded="true" />
-                    <element signature="e#1353#1354#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#4690#4691#0" expanded="true" />
+                    <element signature="e#4724#4725#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -122,35 +124,31 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1071">
-                  <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+                <state relative-caret-position="119">
+                  <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#2148#2149#0" expanded="true" />
+                    <element signature="e#2180#2181#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java">
+            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Comms.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="969">
-                  <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/UpdateListener.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/UpdateEvent.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="44" selection-start-line="44" selection-end-line="44" />
+                <state relative-caret-position="374">
+                  <caret line="64" column="79" lean-forward="true" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#Comms#0;class#Comms#0" />
+                    <element signature="method#openServerSocket#0;class#Comms#0" />
+                    <element signature="method#sendObject#0;class#ConnectedClient#0;class#Comms#0" />
+                    <element signature="method#receiveObject#0;class#ConnectedClient#0;class#Comms#0" />
+                    <element signature="e#6716#6717#0" expanded="true" />
+                    <element signature="e#6829#6830#0" expanded="true" />
+                    <element signature="e#6934#6935#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -168,36 +166,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addDish</find>
-      <find>Ingr</find>
-      <find>addstaff</find>
-      <find>adddron</find>
-      <find>dataSource</find>
-      <find>user</find>
-      <find>config</find>
-      <find>orders</find>
+      <find>incomingMsgThread</find>
+      <find>sendm</find>
+      <find>sendM</find>
+      <find>bro</find>
+      <find>getorderst</find>
+      <find>ordercost</find>
+      <find>getBasket</find>
+      <find>price</find>
       <find>basket</find>
-      <find>notifyUpdate</find>
+      <find>getbas</find>
+      <find>case</find>
+      <find>restaurant</find>
+      <find>init</find>
+      <find>verifyUser</find>
+      <find>getdata</find>
+      <find>commsThread</find>
+      <find>getOrders</find>
+      <find>removeOrder</find>
       <find>order</find>
-      <find>todo</find>
+      <find>cancel</find>
       <find>update</find>
-      <find>addUpdateListener</find>
-      <find>notify</find>
-      <find>stock</find>
-      <find>StockLevels</find>
-      <find>stockLe</find>
-      <find>setstock</find>
-      <find>Stock</find>
-      <find>dishst</find>
-      <find>loadConfiguration</find>
-      <find>level</find>
-      <find>staff</find>
-      <find>random</find>
-      <find>addsta</find>
-      <find>intval</find>
-      <find>add</find>
-      <find>system</find>
-      <find>load</find>
+      <find>getOrderStatus</find>
+      <find>openIncomingCommsSocket</find>
+      <find>removeord</find>
+      <find>IncomingCommsThread</find>
+      <find>get</find>
+      <find>sending</find>
+      <find>cost</find>
+      <find>status</find>
+      <find>todo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,14 +206,23 @@
       <list>
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/Launcher.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Basket.java" />
-        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java" />
-        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java" />
-        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/DishesStock.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/IngredientsStock.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java" />
-        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Alex.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Ingredient.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Message.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Postcode.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Restaurant.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Comms.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientComms.java" />
+        <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java" />
         <option value="$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java" />
       </list>
     </option>
@@ -232,10 +239,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="253" />
-    <option name="y" value="-15" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="830" />
+    <option name="y" value="-1467" />
+    <option name="width" value="737" />
+    <option name="height" value="386" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -245,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,6 +328,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -347,8 +354,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerApplication">
-    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ClientApplication">
+    <configuration name="ClientApplication" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comp1206.sushi.ClientApplication" />
       <module name="sushi" />
       <extension name="coverage">
@@ -361,7 +368,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comp1206.sushi.Launcher" />
       <module name="sushi" />
       <extension name="coverage">
@@ -374,7 +381,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comp1206.sushi.ServerApplication" />
       <module name="sushi" />
       <extension name="coverage">
@@ -394,17 +401,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Launcher" />
-      <item itemvalue="Application.ServerApplication" />
       <item itemvalue="Application.ClientApplication" />
+      <item itemvalue="Application.ServerApplication" />
+      <item itemvalue="Application.Launcher" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ServerApplication" />
-        <item itemvalue="Application.ClientApplication" />
-        <item itemvalue="Application.Launcher" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -427,7 +427,10 @@
       <workItem from="1555424076894" duration="1619000" />
       <workItem from="1556457385975" duration="12000" />
       <workItem from="1556457756003" duration="22901000" />
-      <workItem from="1556547334719" duration="2011000" />
+      <workItem from="1556547334719" duration="37295000" />
+      <workItem from="1556752537577" duration="1249000" />
+      <workItem from="1556754021896" duration="26253000" />
+      <workItem from="1556788061298" duration="23916000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1555083392769</created>
@@ -520,11 +523,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556547913038</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changed config path to relative">
+      <created>1556549482035</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556549482035</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64551000" />
+    <option name="totallyTimeSpent" value="151253000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -536,37 +546,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1004" y="-1448" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6046025" visible="true" weight="0.16868381" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.39539748" side_tool="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60065466" visible="true" weight="0.0600159" />
+      <window_info id="Favorites" order="1" sideWeight="0.39934534" side_tool="true" weight="0.14750378" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.25040916" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" weight="0.2651391" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50378215" side_tool="true" weight="0.29787233" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49621785" weight="0.23567921" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49924356" weight="0.57610476" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50378215" side_tool="true" weight="0.29787233" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49621785" weight="0.23567921" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" sideWeight="0.49924356" side_tool="true" visible="true" weight="0.21278255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -583,20 +593,14 @@
     <MESSAGE value="Staff restocking implemented" />
     <MESSAGE value="Staff restocking impoved" />
     <MESSAGE value="Staff restocking improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Staff restocking improved" />
+    <MESSAGE value="Changed config path to relative" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed config path to relative" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/ServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -642,92 +646,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/ClientApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Basket.java" />
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="230" column="33" selection-start-line="230" selection-start-column="16" selection-end-line="230" selection-end-column="33" />
-          <folding>
-            <element signature="e#2357#2358#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2565#2566#0" expanded="true" />
-            <element signature="e#2612#2613#0" expanded="true" />
-            <element signature="e#3642#3643#0" expanded="true" />
-            <element signature="e#3674#3675#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
-            <element signature="e#3762#3763#0" expanded="true" />
-            <element signature="e#4806#4807#0" expanded="true" />
-            <element signature="e#4845#4846#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
-            <element signature="e#4956#4957#0" expanded="true" />
-            <element signature="e#5079#5080#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5225#5226#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
-            <element signature="e#5510#5511#0" expanded="true" />
-            <element signature="e#5552#5553#0" expanded="true" />
-            <element signature="e#5626#5627#0" expanded="true" />
-            <element signature="e#5655#5656#0" expanded="true" />
-            <element signature="e#5728#5729#0" expanded="true" />
-            <element signature="e#5756#5757#0" expanded="true" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5902#5903#0" expanded="true" />
-            <element signature="e#5944#5945#0" expanded="true" />
-            <element signature="e#5987#5988#0" expanded="true" />
-            <element signature="e#6054#6055#0" expanded="true" />
-            <element signature="e#6092#6093#0" expanded="true" />
-            <element signature="e#6117#6118#0" expanded="true" />
-            <element signature="e#6156#6157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/DishesStock.java" />
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/IngredientsStock.java" />
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/UpdateEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/Configuration.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/DataInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="339" selection-start-line="339" selection-end-line="339" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Alex.java" />
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
+        <state relative-caret-position="410">
+          <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -738,52 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/UpdateEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-          <folding>
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1353#1354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-          <folding>
-            <element signature="e#19289#19290#0" expanded="true" />
-            <element signature="e#19332#19333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/Configuration.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/StockManagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="272">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#StockManagement#0;class#StockManagement#0" />
@@ -796,20 +700,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/ObjectInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="156">
+          <caret line="1541" column="26" lean-forward="true" selection-start-line="1541" selection-start-column="26" selection-end-line="1541" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="42">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readLines#0;class#Configuration#0" />
+            <element signature="e#410#416#0" expanded="true" />
             <element signature="method#parseLines#0;class#Configuration#0" />
             <element signature="method#parseStock#0;class#Configuration#0" />
             <element signature="method#parseUser#0;class#Configuration#0" />
@@ -820,6 +731,167 @@
             <element signature="method#findIngredient#0;class#Configuration#0" />
             <element signature="method#findDish#0;class#Configuration#0" />
             <element signature="method#findPostcode#0;class#Configuration#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/ClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5984">
+          <caret line="369" selection-start-line="369" selection-end-line="369" />
+          <folding>
+            <element signature="e#19289#19290#0" expanded="true" />
+            <element signature="e#19332#19333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Postcode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
+          <folding>
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Comms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="64" column="79" lean-forward="true" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Comms#0;class#Comms#0" />
+            <element signature="method#openServerSocket#0;class#Comms#0" />
+            <element signature="method#sendObject#0;class#ConnectedClient#0;class#Comms#0" />
+            <element signature="method#receiveObject#0;class#ConnectedClient#0;class#Comms#0" />
+            <element signature="e#6716#6717#0" expanded="true" />
+            <element signature="e#6829#6830#0" expanded="true" />
+            <element signature="e#6934#6935#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/ClientComms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="105" column="4" lean-forward="true" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ClientComms#0;class#ClientComms#0" />
+            <element signature="method#openSocket#0;class#ClientComms#0" />
+            <element signature="method#sendObject#0;class#ClientComms#0" />
+            <element signature="method#listenForMessages#0;class#ClientComms#0" />
+            <element signature="class#ServerConnection#0;class#ClientComms#0" />
+            <element signature="method#ServerConnection#0;class#ServerConnection#0;class#ClientComms#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/common/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="256" column="66" selection-start-line="256" selection-start-column="63" selection-end-line="256" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4690#4691#0" expanded="true" />
+            <element signature="e#4724#4725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sushi/src/main/java/comp1206/sushi/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4676">
+          <caret line="349" column="4" lean-forward="true" selection-start-line="349" selection-start-column="4" selection-end-line="349" selection-end-column="4" />
+          <folding>
+            <element signature="e#4570#4571#0" expanded="true" />
+            <element signature="e#4602#4603#0" expanded="true" />
           </folding>
         </state>
       </provider>

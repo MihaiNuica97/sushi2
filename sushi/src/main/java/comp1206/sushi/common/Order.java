@@ -20,7 +20,8 @@ public class Order extends Model
         LocalDateTime now = LocalDateTime.now();
         this.name = dtf.format(now);
         this.user = user;
-        this.order = order;
+        this.order = new HashMap<>();
+        this.order.putAll(order);
         this.status = "Incomplete";
     }
     
@@ -77,12 +78,22 @@ public class Order extends Model
     
     public Number getOrderCost()
     {
-        float cost = 0;
+        float sum = 0;
         
-        for(Number price: order.values())
+        for(Dish dish: order.keySet())
         {
-            cost += price.floatValue();
+            sum += dish.getPrice().floatValue()*order.get(dish).intValue();
         }
-        return (Number)cost;
+        return sum;
+    }
+    
+    public User getUser()
+    {
+        return user;
+    }
+    
+    public void setUser(User user)
+    {
+        this.user = user;
     }
 }

@@ -3,9 +3,11 @@ package comp1206.sushi.common;
 import comp1206.sushi.common.Postcode;
 import comp1206.sushi.common.User;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class User extends Model {
+public class User extends Model implements Serializable
+{
 	
 	private String name;
 	private String password;
@@ -14,7 +16,7 @@ public class User extends Model {
 	private HashMap<Dish, Number> basket;
 	
 	
-	public User(String username, String password, String address, Postcode postcode) {
+	public User(String username, String password, String address, Postcode postcode)  {
 		this.name = username;
 		this.password = password;
 		this.address = address;
@@ -56,7 +58,7 @@ public class User extends Model {
 	{
 		if(basket.containsKey(dish))
 		{
-			basket.put(dish,(Integer)basket.get(dish) + (Integer)quantity);
+			basket.put(dish,basket.get(dish).intValue() + quantity.intValue());
 		}
 		else
 		{
@@ -76,9 +78,10 @@ public class User extends Model {
 	{
 		float cost = 0;
 		
-		for(Number price: basket.values())
+		for(Dish dish: basket.keySet())
 		{
-			cost += price.floatValue();
+			
+			cost += dish.getPrice().floatValue()*basket.get(dish).intValue();
 		}
 		return (Number)cost;
 	}

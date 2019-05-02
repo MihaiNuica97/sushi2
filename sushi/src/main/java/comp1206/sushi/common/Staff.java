@@ -44,7 +44,7 @@ public class Staff extends Model {
 		class StaffThread extends Thread
 		{
 			String name;
-			StaffThread()
+			private StaffThread()
 			{
 				name = staff.getName();
 			}
