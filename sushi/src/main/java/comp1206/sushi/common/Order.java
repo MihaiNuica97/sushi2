@@ -56,7 +56,7 @@ public class Order extends Model
     
     public Number getDistance()
     {
-        return 1;
+        return user.getDistance();
     }
     
     @Override

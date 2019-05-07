@@ -23,7 +23,12 @@ public class User extends Model implements Serializable
 		this.postcode = postcode;
 		this.basket = new HashMap<>();
 	}
-
+	
+	public String getAddress()
+	{
+		return address;
+	}
+	
 	public String getName() {
 		return name;
 	}

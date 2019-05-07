@@ -293,6 +293,7 @@ public class Comms implements Serializable
                            {
                                client.sendMessage(new Message(loggedUser, "Registered"));
                                openConnections.put(loggedUser, client);
+                               server.getUsers().add(loggedUser);
                                System.out.println("User " + loggedUser.getName() + " has registered");
                                client.listenForMessages();
                                connected = false;

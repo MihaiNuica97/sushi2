@@ -59,6 +59,7 @@ public class Configuration
     
     private void parseLines()
     {
+        currentLine = currentLine.trim();
         lineArray = currentLine.split(":");
         String category = lineArray[0].toLowerCase();
         switch (category)
@@ -139,7 +140,14 @@ public class Configuration
     
     private void parseUser(String name, String password, String address, String postcodeStr)
     {
-        users.add(new User(name, password, address, findPostcode(postcodeStr)));
+        if(findPostcode(postcodeStr)!=null)
+        {
+            users.add(new User(name, password, address, findPostcode(postcodeStr)));
+        }
+        else
+        {
+            users.add(new User(name, password, address, new Postcode(postcodeStr)));
+        }
     }
     
     private void parseDish(String[] lineArray)

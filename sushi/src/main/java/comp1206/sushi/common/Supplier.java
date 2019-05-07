@@ -30,7 +30,8 @@ public class Supplier extends Model {
 	}
 
 	public Number getDistance() {
-		return postcode.getDistance();
+		this.distance = postcode.getDistance();
+		return distance;
 	}
 
 }

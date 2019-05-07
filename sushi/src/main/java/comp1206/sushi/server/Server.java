@@ -124,6 +124,15 @@ public class Server implements ServerInterface, Serializable {
 
 	@Override
 	public Supplier addSupplier(String name, Postcode postcode) {
+	    for(Postcode thisPostcode: postcodes)
+        {
+            if(thisPostcode.getName().equals(postcode.getName()))
+            {
+                Supplier mock = new Supplier(name,thisPostcode);
+                this.suppliers.add(mock);
+                return mock;
+            }
+        }
 		Supplier mock = new Supplier(name,postcode);
 		this.suppliers.add(mock);
 		return mock;
@@ -215,8 +224,7 @@ public class Server implements ServerInterface, Serializable {
 
 	@Override
 	public Number getOrderDistance(Order order) {
-		Order mock = (Order)order;
-		return mock.getDistance();
+		return order.getDistance();
 	}
 
 	@Override
@@ -247,8 +255,12 @@ public class Server implements ServerInterface, Serializable {
 	@Override
 	public Postcode addPostcode(String code) {
 		Postcode mock = new Postcode(code);
+		mock.calculateDistance(restaurant);
 		this.postcodes.add(mock);
-		comms.broadcastMessage(mock);
+		if(comms!=null)
+        {
+            comms.broadcastMessage(mock);
+        }
 		this.notifyUpdate();
 		return mock;
 	}
@@ -278,7 +290,12 @@ public class Server implements ServerInterface, Serializable {
 		config.readLines();
 		
 		restaurant = config.getRestaurant();
-		dishes = config.getDishes();
+        for(Postcode postcode: config.getPostcodes())
+        {
+            addPostcode(postcode.getName());
+        }
+        
+        dishes = config.getDishes();
 		drones = config.getDrones();
 		ingredients = config.getIngredients();
 		orders = config.getOrders();
@@ -286,10 +303,24 @@ public class Server implements ServerInterface, Serializable {
 		{
 			addStaff(thisStaff.getName());
 		}
-		suppliers = config.getSuppliers();
-		users = config.getUsers();
-		postcodes = config.getPostcodes();
+        for (Supplier supplier: config.getSuppliers())
+        {
+            addSupplier(supplier.getName(),supplier.getPostcode());
+        }
+        
+		for(User user: config.getUsers())
+        {
+            for(Postcode postcode: postcodes)
+            {
+                if(user.getPostcode().getName().equals(postcode.getName()))
+                {
+                    users.add(new User(user.getName(),user.getPassword(),user.getAddress(),postcode));
+                    notifyUpdate();
+                }
+            }
+        }
 		
+
 		for(Ingredient ingredient: ingredients)
 		{
 			setStock(ingredient,0);

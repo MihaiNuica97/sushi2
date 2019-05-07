@@ -273,7 +273,6 @@ public class Client implements ClientInterface, Serializable
                 {
                     e.printStackTrace();
                 }
-                System.out.println(message.getInstructions());
                 parseMessage(message);
             }
             
