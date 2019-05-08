@@ -28,7 +28,11 @@ public class Drone extends Model {
 
 	
 	public Number getProgress() {
-		return progress;
+		if(this.getStatus().equals("Idle"))
+        {
+            return null;
+        }
+	    return progress;
 	}
 	
 	public void setProgress(Number progress) {
@@ -105,9 +109,11 @@ public class Drone extends Model {
         public Trip(Drone drone, Postcode destination)
         {
             drone.setDestination(destination);
-            drone.setStatus("En route to " + destination.getName());
+            drone.setStatus("In transit");
             this.go(drone);
             drone.setStatus("Idle");
+            drone.setSource(destination);
+            drone.setDestination(null);
             try
             {
                 Thread.sleep(5000);
@@ -115,7 +121,6 @@ public class Drone extends Model {
             {
                 e.printStackTrace();
             }
-            drone.setSource(destination);
         }
         
         private void go(Drone drone)
@@ -137,11 +142,6 @@ public class Drone extends Model {
                     e.printStackTrace();
                 }
                 progressNow += drone.getSpeed().intValue();
-                System.out.println(drone.getName());
-                System.out.println(distance);
-                System.out.println(progressNow);
-                System.out.println(drone.getProgress());
-                System.out.println();
                 
                 drone.setProgress(progressNow*100/distance);
                 notifyUpdate();

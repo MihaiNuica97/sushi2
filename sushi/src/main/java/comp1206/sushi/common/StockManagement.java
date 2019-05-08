@@ -14,15 +14,17 @@ public class StockManagement
     private HashMap<Ingredient, Number> ingredientStock;
     private LinkedList<Ingredient>ingredientRestocks;
     private LinkedList<Ingredient>ingredientDeliveryQueue;
-    private HashMap<Dish,Integer> dishRestocks;
+    private LinkedList<Dish>dishRestocks;
+    private LinkedList<Dish>dishDeliveries;
     public StockManagement(Server server)
     {
         this.server = server;
         dishStock = new HashMap<>();
         ingredientStock = new HashMap<>();
         ingredientRestocks = new LinkedList<>();
-        dishRestocks = new HashMap<>();
+        dishRestocks = new LinkedList<>();
         ingredientDeliveryQueue = new LinkedList<>();
+        dishDeliveries = new LinkedList<>();
     }
     
     public synchronized Ingredient verifyIngredientsStock()
@@ -59,7 +61,24 @@ public class StockManagement
         {
             if(dishStock.get(dish).floatValue() < dish.getRestockThreshold().floatValue())
             {
-                dishStock.put(dish,dishStock.get(dish).floatValue() + dish.getRestockAmount().floatValue());
+                boolean canRestock = true;
+                for(Ingredient ingredient:dish.getRecipe().keySet())
+                {
+                    if(ingredientStock.get(ingredient).intValue() < dish.getRecipe().get(ingredient).intValue())
+                    {
+                        canRestock = false;
+                    }
+                }
+                if(canRestock)
+                {
+                    for(Ingredient ingredient:dish.getRecipe().keySet())
+                    {
+                        ingredientStock.put(ingredient,ingredientStock.get(ingredient).intValue() - dish.getRecipe().get(ingredient).intValue());
+                    }
+                    dishStock.put(dish,dishStock.get(dish).floatValue() + dish.getRestockAmount().floatValue());
+                }
+
+                updateIngredientRestockQueue();
                 System.out.println(dish.getName() + " has been restocked!");
                 server.notifyUpdate();
             }

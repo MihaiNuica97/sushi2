@@ -49,7 +49,6 @@ public class Postcode extends Model implements Serializable
 		HashMap<String,Double> restaurantMap = getLatLongFromURL(destination);
 		
 		this.distance = calculateDistance(latLong.get("lat"),restaurantMap.get("lat"),latLong.get("long"),restaurantMap.get("long")).intValue();
-		System.out.println(distance);
 	}
 	public int getDistanceFrom(Postcode postcode)
 	{
@@ -90,7 +89,7 @@ public class Postcode extends Model implements Serializable
 					
 					return map;
 				}
-				System.out.println("");			}
+			}
 		} catch (MalformedURLException e)
 		{
 			e.printStackTrace();

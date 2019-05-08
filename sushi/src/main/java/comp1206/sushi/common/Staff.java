@@ -56,7 +56,7 @@ public class Staff extends Model {
 					if(rand.nextBoolean())
 					{
 						staff.setStatus("Working");
-						System.out.println(staff.getName()+" is verifying stocks...");
+						notifyUpdate();
                         try
                         {
                             Thread.sleep(rand.nextInt(40001) + 2000);
@@ -70,6 +70,7 @@ public class Staff extends Model {
 					else
 					{
 						staff.setStatus("Idle");
+						notifyUpdate();
 					}
 				}
 			}
