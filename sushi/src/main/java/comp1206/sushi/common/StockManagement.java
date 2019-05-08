@@ -2,7 +2,9 @@ package comp1206.sushi.common;
 
 import comp1206.sushi.server.Server;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class StockManagement
@@ -10,33 +12,45 @@ public class StockManagement
     private Server server;
     private HashMap<Dish, Number> dishStock;
     private HashMap<Ingredient, Number> ingredientStock;
-    
+    private LinkedList<Ingredient>ingredientRestocks;
+    private LinkedList<Ingredient>ingredientDeliveryQueue;
+    private HashMap<Dish,Integer> dishRestocks;
     public StockManagement(Server server)
     {
         this.server = server;
         dishStock = new HashMap<>();
         ingredientStock = new HashMap<>();
+        ingredientRestocks = new LinkedList<>();
+        dishRestocks = new HashMap<>();
+        ingredientDeliveryQueue = new LinkedList<>();
     }
     
-    public synchronized void verifyIngredientsStock()
+    public synchronized Ingredient verifyIngredientsStock()
     {
+        updateIngredientRestockQueue();
         for(Ingredient ingredient: ingredientStock.keySet())
         {
-            if(ingredientStock.get(ingredient).floatValue() < ingredient.getRestockThreshold().floatValue())
+            if(ingredientRestocks.contains(ingredient))
             {
-                Random random = new Random();
-                try
-                {
-                    Thread.sleep(random.nextInt(40) + 2000);
-                } catch (InterruptedException e)
-                {
-                    e.printStackTrace();
-                }
-                ingredientStock.put(ingredient,ingredientStock.get(ingredient).floatValue() + ingredient.getRestockAmount().floatValue());
-                System.out.println(ingredient.getName() + " has been restocked!");
-                server.notifyUpdate();
+                ingredientRestocks.remove(ingredient);
+                ingredientDeliveryQueue.add(ingredient);
+                return ingredient;
             }
         }
+        return null;
+    }
+    
+    private synchronized void updateIngredientRestockQueue()
+    {
+        ingredientRestocks.clear();
+        for(Ingredient ingredient: ingredientStock.keySet())
+        {
+            if((ingredientStock.get(ingredient).intValue() < ingredient.getRestockThreshold().intValue()) && !ingredientDeliveryQueue.contains(ingredient))
+            {
+                    ingredientRestocks.add(ingredient);
+            }
+        }
+        
     }
     
     public synchronized void verifyDishStock()
@@ -56,10 +70,23 @@ public class StockManagement
     {
         dishStock.put(dish,stock);
     }
-    public void updateIngredientStock(Ingredient ingredient, Number stock)
+    public synchronized void updateIngredientStock(Ingredient ingredient, Number stock)
     {
         ingredientStock.put(ingredient,stock);
+        updateIngredientRestockQueue();
     }
+    
+    public void restockDish()
+    {
+    
+    }
+    public synchronized void restockIngredient(Ingredient ingredient)
+    {
+        ingredientStock.put(ingredient,(Number)(ingredientStock.get(ingredient).intValue() + ingredient.getRestockAmount().intValue()));
+        ingredientDeliveryQueue.remove(ingredient);
+        updateIngredientRestockQueue();
+    }
+    
     public HashMap<Dish, Number> getDishStock()
     {
         return dishStock;
@@ -72,10 +99,17 @@ public class StockManagement
     {
         this.dishStock = dishStock;
     }
+    
     public void setIngredientStock(HashMap<Ingredient, Number> ingredientStock)
     {
         this.ingredientStock = ingredientStock;
+        updateIngredientRestockQueue();
     }
     
-
+    public Server getServer()
+    {
+        return server;
+    }
+    
+    //TODO IMPLEMENT RESTOCK QUEUE FOR DISHES
 }

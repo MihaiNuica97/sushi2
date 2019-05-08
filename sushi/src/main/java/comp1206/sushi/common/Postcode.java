@@ -45,12 +45,17 @@ public class Postcode extends Model implements Serializable
 	
 	public void calculateDistance(Restaurant restaurant)
 	{
-		//This function needs implementing
 		Postcode destination = restaurant.getLocation();
 		HashMap<String,Double> restaurantMap = getLatLongFromURL(destination);
 		
 		this.distance = calculateDistance(latLong.get("lat"),restaurantMap.get("lat"),latLong.get("long"),restaurantMap.get("long")).intValue();
 		System.out.println(distance);
+	}
+	public int getDistanceFrom(Postcode postcode)
+	{
+		HashMap<String,Double> destinationMap = new HashMap<>(postcode.getLatLong());
+		
+		return calculateDistance(latLong.get("lat"),destinationMap.get("lat"),latLong.get("long"),destinationMap.get("long")).intValue();
 	}
 	
 	protected void calculateLatLong()
@@ -82,10 +87,6 @@ public class Postcode extends Model implements Serializable
 					
 					map.put("lat",Double.valueOf(laT));
 					map.put("long",Double.valueOf(lonG));
-					
-					System.out.println(postString);
-					System.out.println(laT);
-					System.out.println(lonG);
 					
 					return map;
 				}

@@ -155,6 +155,8 @@ public class Server implements ServerInterface, Serializable {
 	public Drone addDrone(Number speed) {
 		Drone mock = new Drone(speed);
 		this.drones.add(mock);
+		mock.setSource(restaurant.getLocation());
+		mock.run(stockManagement);
 		return mock;
 	}
 
@@ -296,9 +298,13 @@ public class Server implements ServerInterface, Serializable {
         }
         
         dishes = config.getDishes();
-		drones = config.getDrones();
+        
 		ingredients = config.getIngredients();
 		orders = config.getOrders();
+        for (Drone thisDrone: config.getDrones())
+        {
+            addDrone(thisDrone.getSpeed());
+        }
 		for (Staff thisStaff: config.getStaff())
 		{
 			addStaff(thisStaff.getName());
@@ -315,7 +321,6 @@ public class Server implements ServerInterface, Serializable {
                 if(user.getPostcode().getName().equals(postcode.getName()))
                 {
                     users.add(new User(user.getName(),user.getPassword(),user.getAddress(),postcode));
-                    notifyUpdate();
                 }
             }
         }
@@ -340,6 +345,7 @@ public class Server implements ServerInterface, Serializable {
 		{
 			setStock(ingredient, config.getIngredientStock().get(ingredient));
 		}
+		notifyUpdate();
 	}
 
 	@Override
@@ -370,12 +376,7 @@ public class Server implements ServerInterface, Serializable {
 	
 	@Override
 	public String getDroneStatus(Drone drone) {
-		Random rand = new Random();
-		if(rand.nextBoolean()) {
-			return "Idle";
-		} else {
-			return "Flying";
-		}
+		return drone.getStatus();
 	}
 	
 	@Override

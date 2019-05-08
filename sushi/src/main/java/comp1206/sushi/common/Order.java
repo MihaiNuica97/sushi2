@@ -65,12 +65,12 @@ public class Order extends Model
         return this.name;
     }
     
-    public String getStatus()
+    public synchronized String  getStatus()
     {
         return status;
     }
     
-    public void setStatus(String status)
+    public synchronized void setStatus(String status)
     {
         notifyUpdate("status", this.status, status);
         this.status = status;
