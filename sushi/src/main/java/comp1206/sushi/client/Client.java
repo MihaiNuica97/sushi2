@@ -74,7 +74,7 @@ public class Client implements ClientInterface, Serializable
             System.out.println("Added user " + user.getName() + " with password " + user.getPassword());
             loggedUser = user;
             
-            commsThread = new IncomingCommsThread();
+            commsThread = new IncomingCommsThread(this);
             commsThread.start();
             
             return user;
@@ -84,12 +84,14 @@ public class Client implements ClientInterface, Serializable
     
     public void getDataFromServer()
     {
-        Message initMessage = comms.receiveMessage();
-        dishes = new ArrayList<>();
-        dishes = (ArrayList)initMessage.getObject();
+        Message initMessage;
     
         initMessage = comms.receiveMessage();
         restaurant = (Restaurant)initMessage.getObject();
+    
+        initMessage = comms.receiveMessage();
+        dishes = new ArrayList<>();
+        dishes = (ArrayList)initMessage.getObject();
         
         initMessage = comms.receiveMessage();
         postcodes = (ArrayList)initMessage.getObject();
@@ -111,7 +113,7 @@ public class Client implements ClientInterface, Serializable
         if (message.getInstructions().equals("Login Successful"))
         {
             System.out.println("User " + loggedUser.getName() + " has logged in");
-            commsThread = new IncomingCommsThread();
+            commsThread = new IncomingCommsThread(this);
             commsThread.start();
             return loggedUser;
         }
@@ -256,9 +258,10 @@ public class Client implements ClientInterface, Serializable
     
     class IncomingCommsThread extends Thread
     {
-        IncomingCommsThread()
+        Client client;
+        IncomingCommsThread(Client client)
         {
-        
+            this.client = client;
         }
         public void run()
         {
@@ -277,22 +280,26 @@ public class Client implements ClientInterface, Serializable
             }
             
         }
-        void parseMessage(Message message)
+         void parseMessage(Message message)
         {
             switch (message.getInstructions())
             {
                 case "Update Order":
-                    Order order = (Order)message.getObject();
-                    for(Order thisOrder: orders)
+                    String orderUpdate = (String)message.getObject();
+                    String name = orderUpdate.substring(orderUpdate.indexOf("name:")+5,orderUpdate.indexOf("status"));
+                    String status = orderUpdate.substring(orderUpdate.indexOf("status:")+7);
+                    for(Order thisOrderToUpdate: orders)
                     {
-                        if(thisOrder.getName().equals(order.getName()))
+                        if(thisOrderToUpdate.getName().equals(name))
                         {
-                            System.out.println("Updating order: " + thisOrder.getName());
-                            thisOrder.setStatus(order.getStatus());
-                            notifyUpdate();
+                            thisOrderToUpdate.setStatus(status);
+                            client.notifyUpdate();
+                            System.out.println(name);
+                            System.out.println(status);
                         }
                     }
-                    System.out.println(order.getName());
+                    
+                    
                     break;
                     
                 case "Remove Order":
@@ -303,7 +310,7 @@ public class Client implements ClientInterface, Serializable
                         if(thisOrder.getName().equals(orderToDelete.getName()))
                         {
                             orders.remove(thisOrder);
-                            notifyUpdate();
+                            client.notifyUpdate();
                             break;
                         }
                     }
@@ -315,7 +322,7 @@ public class Client implements ClientInterface, Serializable
                     dishes.add(dishToAdd);
                     System.out.println("Added dish " + dishToAdd.getName());
                     System.out.println();
-                    notifyUpdate();
+                    client.notifyUpdate();
                     break;
     
                 case "Remove Dish":
@@ -325,7 +332,7 @@ public class Client implements ClientInterface, Serializable
                         if(thisDish.getName().equals(dishToDelete.getName()))
                         {
                             dishes.remove(thisDish);
-                            notifyUpdate();
+                            client.notifyUpdate();
                             break;
                         }
                     }

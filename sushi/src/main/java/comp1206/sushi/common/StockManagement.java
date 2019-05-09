@@ -99,6 +99,53 @@ public class StockManagement
     {
     
     }
+    
+    public synchronized void deliveredOrder(Order order)
+    {
+        HashMap<Dish,Number> dishMap = order.getOrder();
+        for(Dish dish: dishMap.keySet())
+        {
+            int delivered = dishMap.get(dish).intValue();
+            Integer currentStock = null;
+    
+            for(Dish thisDish:getDishStock().keySet())
+            {
+                if(dish.getName().equals(thisDish.getName()))
+                {
+                    currentStock = getDishStock().get(thisDish).intValue();
+                    updateDishStock(thisDish,currentStock-delivered);
+                }
+            }
+            
+            
+        }
+    }
+    
+    public synchronized boolean canDeliver(Order order)
+    {
+        HashMap<Dish,Number> dishMap = order.getOrder();
+        
+        for(Dish dish: dishMap.keySet())
+        {
+            int toDeliver = dishMap.get(dish).intValue();
+            Integer currentStock = null;
+            
+            for(Dish thisDish:getDishStock().keySet())
+            {
+                if(dish.getName().equals(thisDish.getName()))
+                {
+                    currentStock = getDishStock().get(thisDish).intValue();
+                    break;
+                }
+            }
+            
+        
+            if(currentStock < toDeliver || currentStock == null)
+                return false;
+        }
+        return true;
+    }
+    
     public synchronized void restockIngredient(Ingredient ingredient)
     {
         ingredientStock.put(ingredient,(Number)(ingredientStock.get(ingredient).intValue() + ingredient.getRestockAmount().intValue()));

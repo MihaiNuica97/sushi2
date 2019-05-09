@@ -92,24 +92,74 @@ public class Drone extends Model {
 	private void restock(StockManagement stockManagement,Ingredient ingredient)
     {
         
-        new Trip(this,ingredient.getSupplier().getPostcode());
-        new Trip(this,stockManagement.getServer().getRestaurantPostcode());
+        new Trip(this,ingredient.getSupplier().getPostcode(),"Resupplying");
+        new Trip(this,stockManagement.getServer().getRestaurantPostcode(),"Resupplying");
         
         stockManagement.restockIngredient(ingredient);
     }
     
-    private void deliver(Order order)
+    private void deliver(StockManagement stockManagement, Order order)
     {
-    
+        new Trip(this,order.getUser().getPostcode(),"Delivery");
+        order.setStatus("Complete");
+        stockManagement.getServer().getOrderStatus(order);
+        stockManagement.deliveredOrder(order);
+        new Trip(this,stockManagement.getServer().getRestaurantPostcode(),"Returning");
+        
+        
     }
     
+
+    
+	public void run(StockManagement stockManagement)
+	{
+		class DroneThread extends Thread
+        {
+            private DroneThread()
+            {
+            
+            }
+            
+            public void run()
+            {
+                while(true)
+                {
+                    try
+                    {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    
+                    Ingredient toRestock = stockManagement.verifyIngredientsStock();
+                    if(toRestock !=null && getStatus().equals("Idle"))
+                    {
+                        System.out.println("Found ingredient " + toRestock.getName() + " needs restocking");
+                        System.out.println();
+                        restock(stockManagement,toRestock);
+                    }
+                    
+                    Order toDeliver = stockManagement.getServer().getNextOrderToDeliver();
+                    
+                    if(toDeliver != null && getStatus().equals("Idle"))
+                    {
+                        deliver(stockManagement,toDeliver);
+                    }
+                    
+                }
+            }
+        }
+        DroneThread droneThread = new DroneThread();
+        droneThread.start();
+	}
     class Trip
     {
         
-        public Trip(Drone drone, Postcode destination)
+        public Trip(Drone drone, Postcode destination, String thisStatus)
         {
             drone.setDestination(destination);
-            drone.setStatus("In transit");
+            drone.setStatus("In transit (" + thisStatus + ")");
             this.go(drone);
             drone.setStatus("Idle");
             drone.setSource(destination);
@@ -147,46 +197,9 @@ public class Drone extends Model {
                 notifyUpdate();
             }
             drone.setProgress(100);
-
-    
+            
+            
         }
     }
-    
-	public void run(StockManagement stockManagement)
-	{
-		class DroneThread extends Thread
-        {
-            private DroneThread()
-            {
-            
-            }
-            
-            public void run()
-            {
-                while(true)
-                {
-                    try
-                    {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e)
-                    {
-                        e.printStackTrace();
-                    }
-                    Ingredient toRestock = stockManagement.verifyIngredientsStock();
-                    if(toRestock !=null)
-                    {
-                        System.out.println("Found ingredient " + toRestock.getName() + " needs restocking");
-                        System.out.println();
-                        restock(stockManagement,toRestock);
-                    }
-                    
-                    //TODO IMPLEMENT ORDER DELIVERY
-                    
-                }
-            }
-        }
-        DroneThread droneThread = new DroneThread();
-        droneThread.start();
-	}
 	
 }

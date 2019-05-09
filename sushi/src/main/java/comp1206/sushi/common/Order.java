@@ -10,7 +10,7 @@ import comp1206.sushi.common.Order;
 public class Order extends Model
 {
     
-    private String status;
+    private String status = "Incomplete";
     private User user;
     private HashMap<Dish, Number> order;
     
@@ -21,8 +21,7 @@ public class Order extends Model
         this.name = dtf.format(now);
         this.user = user;
         this.order = new HashMap<>();
-        this.order.putAll(order);
-        this.status = "Incomplete";
+        this.order = order;
     }
     
     public Order(User user)
@@ -32,7 +31,6 @@ public class Order extends Model
         this.name = dtf.format(now);
         this.user = user;
         order = new HashMap<>();
-        this.status = "Incomplete";
     }
     
     public Order()
@@ -65,12 +63,12 @@ public class Order extends Model
         return this.name;
     }
     
-    public synchronized String  getStatus()
+    public String  getStatus()
     {
         return status;
     }
     
-    public synchronized void setStatus(String status)
+    public void setStatus(String status)
     {
         notifyUpdate("status", this.status, status);
         this.status = status;
@@ -95,5 +93,10 @@ public class Order extends Model
     public void setUser(User user)
     {
         this.user = user;
+    }
+    
+    public void setOrder(HashMap<Dish, Number> order)
+    {
+        this.order = order;
     }
 }

@@ -50,9 +50,15 @@ public class Comms implements Serializable
     
     public void broadcastMessage(Object object)
     {
-        for(ConnectedClient client: openConnections.values())
+        if(!openConnections.values().isEmpty())
         {
-                client.sendObject(object);
+            for (ConnectedClient client : openConnections.values())
+            {
+                if (client != null)
+                {
+                    client.sendObject(object);
+                }
+            }
         }
     }
     public void sendMessageToUser(User user, Message message)
@@ -114,9 +120,9 @@ public class Comms implements Serializable
     
         public void initialize()
         {
-            sendObject(new Message(new ArrayList<>(server.getDishes()),"Init"));
-            sendObject(new Message(server.getRestaurant(),"Init"));
-            sendObject(new Message(new ArrayList<>(server.getPostcodes()),"Init"));
+            sendMessage(new Message(server.getRestaurant(),"Init"));
+            sendMessage(new Message(new ArrayList<>(server.getDishes()),"Init"));
+            sendMessage(new Message(new ArrayList<>(server.getPostcodes()),"Init"));
         }
     
         public void sendObject(Object object)
@@ -141,7 +147,6 @@ public class Comms implements Serializable
             try
             {
                 Object object = this.getInputStream().readObject();
-                System.out.println(object);
                 return object;
             } catch(EOFException e)
             {
@@ -201,17 +206,17 @@ public class Comms implements Serializable
             switch (message.getInstructions())
             {
                 case "Add Order":
-                    server.orders.add((Order)message.getObject());
+                    Order orderToAdd = (Order)message.getObject();
+                    server.orders.add(orderToAdd);
                     break;
             
                 case "Order Status Check":
                     Order orderToCheck = (Order)message.getObject();
-                    if(orderToCheck == null)
+                    server.getOrderStatus(orderToCheck);
+                    if(orderToCheck == null || !server.getOrders().contains(orderToCheck))
                     {
                         sendMessage(new Message(orderToCheck,"Remove Order"));
-                        break;
                     }
-                    server.getOrderStatus(orderToCheck);
                     break;
             
                 case "Cancel Order":

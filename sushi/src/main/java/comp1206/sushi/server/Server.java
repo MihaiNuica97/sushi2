@@ -39,9 +39,9 @@ public class Server implements ServerInterface, Serializable {
 	public Server()
 	{
         logger.info("Starting up server...");
-		loadConfiguration(path);
 		comms = new Comms(1030, this);
 		comms.openServerSocket();
+		loadConfiguration(path);
 		serverSocket = comms.getServerSocket();
 		comms.openIncomingCommsSocket();
 		
@@ -58,8 +58,8 @@ public class Server implements ServerInterface, Serializable {
 	public Dish addDish(String name, String description, Number price, Number restockThreshold, Number restockAmount) {
 		
 		Dish newDish = new Dish(name,description,price,restockThreshold,restockAmount);
-		this.dishes.add(newDish);
 		comms.broadcastMessage(new Message(newDish,"Add Dish"));
+		this.dishes.add(newDish);
 		this.notifyUpdate();
 		return newDish;
 	}
@@ -203,6 +203,23 @@ public class Server implements ServerInterface, Serializable {
 		this.notifyUpdate();
 	}
 	
+	public synchronized Order getNextOrderToDeliver()
+	{
+		for(Order order: getOrders())
+		{
+			if(!isOrderComplete(order))
+			{
+				if(!order.getStatus().equals("Delivering") && stockManagement.canDeliver(order))
+				{
+					order.setStatus("Delivering");
+					notifyUpdate();
+					getOrderStatus(order);
+					return order;
+				}
+			}
+		}
+		return null;
+	}
 	@Override
 	public Number getOrderCost(Order order)
 	{
@@ -297,10 +314,14 @@ public class Server implements ServerInterface, Serializable {
             addPostcode(postcode.getName());
         }
         
-        dishes = config.getDishes();
+        for(Dish dish:config.getDishes())
+		{
+			dishes.add(dish);
+		}
         
 		ingredients = config.getIngredients();
 		orders = config.getOrders();
+		
         for (Drone thisDrone: config.getDrones())
         {
             addDrone(thisDrone.getSpeed());
@@ -330,7 +351,10 @@ public class Server implements ServerInterface, Serializable {
 		{
 			setStock(ingredient,0);
 		}
-		
+		for(Ingredient ingredient: config.getIngredientStock().keySet())
+		{
+			setStock(ingredient, config.getIngredientStock().get(ingredient));
+		}
 		for(Dish dish: dishes)
 		{
 			setStock(dish,0);
@@ -341,10 +365,7 @@ public class Server implements ServerInterface, Serializable {
 			setStock(dish,config.getDishStock().get(dish));
 		}
 		
-		for(Ingredient ingredient: config.getIngredientStock().keySet())
-		{
-			setStock(ingredient, config.getIngredientStock().get(ingredient));
-		}
+		
 		notifyUpdate();
 	}
 
@@ -358,16 +379,17 @@ public class Server implements ServerInterface, Serializable {
 
 	@Override
 	public boolean isOrderComplete(Order order) {
-		return true;
+		return order.getStatus().equals("Complete");
 	}
 
 	@Override
-	public String getOrderStatus(Order order) {
-		for(Order thisOrder: orders)
+	public String getOrderStatus(Order order)
+	{
+		for(Order thisOrder: getOrders())
 		{
 			if(thisOrder.getName().equals(order.getName()))
 			{
-				comms.sendMessageToUser(order.getUser(),new Message(thisOrder,"Update Order"));
+				comms.sendMessageToUser(thisOrder.getUser(), new Message("name:"+thisOrder.getName()+"status:"+thisOrder.getStatus(),"Update Order"));
 				return thisOrder.getStatus();
 			}
 		}
@@ -462,6 +484,9 @@ public class Server implements ServerInterface, Serializable {
 	public Restaurant getRestaurant() {
 		return restaurant;
 	}
-
-
+	
+	public StockManagement getStockManagement()
+	{
+		return stockManagement;
+	}
 }
