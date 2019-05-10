@@ -95,6 +95,9 @@ public class Client implements ClientInterface, Serializable
         
         initMessage = comms.receiveMessage();
         postcodes = (ArrayList)initMessage.getObject();
+        
+//        initMessage = comms.receiveMessage();
+//        orders = (ArrayList)initMessage.getObject();
     }
     
     @Override
@@ -293,13 +296,10 @@ public class Client implements ClientInterface, Serializable
                         if(thisOrderToUpdate.getName().equals(name))
                         {
                             thisOrderToUpdate.setStatus(status);
+                            thisOrderToUpdate.notifyUpdate();
                             client.notifyUpdate();
-                            System.out.println(name);
-                            System.out.println(status);
                         }
                     }
-                    
-                    
                     break;
                     
                 case "Remove Order":
@@ -332,6 +332,7 @@ public class Client implements ClientInterface, Serializable
                         if(thisDish.getName().equals(dishToDelete.getName()))
                         {
                             dishes.remove(thisDish);
+                            thisDish.notifyUpdate();
                             client.notifyUpdate();
                             break;
                         }

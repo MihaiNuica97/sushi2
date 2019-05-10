@@ -28,18 +28,12 @@ public class Configuration
     private HashMap<Dish, Number> dishStock = new HashMap<>();
     private HashMap<Ingredient, Number> ingredientStock = new HashMap<>();
     
-    public Configuration(String path)
+    public Configuration(String path) throws FileNotFoundException
     {
         this.path = path;
         cfgFile = new File(this.path);
         System.out.println(cfgFile.getAbsolutePath());
-        try
-        {
-            reader = new BufferedReader(new FileReader(cfgFile));
-        } catch (FileNotFoundException e)
-        {
-            System.out.println("Error! Config file not found");
-        }
+        reader = new BufferedReader(new FileReader(cfgFile));
     }
     
     public void readLines()

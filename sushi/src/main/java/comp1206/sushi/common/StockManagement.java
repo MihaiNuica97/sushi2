@@ -76,11 +76,10 @@ public class StockManagement
                         ingredientStock.put(ingredient,ingredientStock.get(ingredient).intValue() - dish.getRecipe().get(ingredient).intValue());
                     }
                     dishStock.put(dish,dishStock.get(dish).floatValue() + dish.getRestockAmount().floatValue());
+                    updateIngredientRestockQueue();
+                    System.out.println(dish.getName() + " has been restocked!");
+                    server.notifyUpdate();
                 }
-
-                updateIngredientRestockQueue();
-                System.out.println(dish.getName() + " has been restocked!");
-                server.notifyUpdate();
             }
         }
     }
@@ -135,13 +134,29 @@ public class StockManagement
                 if(dish.getName().equals(thisDish.getName()))
                 {
                     currentStock = getDishStock().get(thisDish).intValue();
+                    if(dish.getRestockThreshold().intValue() < toDeliver && (currentStock-toDeliver)<0)
+                    {
+                        System.out.println("Issue found " + order.getName());
+                        Number thr = dish.getRestockThreshold();
+                        dish.setRestockThreshold(dish.getRestockAmount());
+                        verifyDishStock();
+                        dish.setRestockThreshold(thr);
+                        return false;
+                    }
                     break;
                 }
             }
             
         
-            if(currentStock < toDeliver || currentStock == null)
+            if(currentStock < toDeliver)
+            {
+                
                 return false;
+            }
+            if(currentStock == null)
+            {
+                return false;
+            }
         }
         return true;
     }

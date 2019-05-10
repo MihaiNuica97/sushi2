@@ -31,17 +31,33 @@ public class Server implements ServerInterface, Serializable {
 	public ArrayList<Postcode> postcodes = new ArrayList<Postcode>();
 	private ArrayList<UpdateListener> listeners = new ArrayList<UpdateListener>();
 	private Configuration config;
-	private String path = "sushi/Configuration.txt";
+	private String path = "Configuration.txt";
 	private ServerSocket serverSocket;
 	private StockManagement stockManagement = new StockManagement(this);
 	private Comms comms;
+	private DataPersistence persistence;
 	
 	public Server()
 	{
         logger.info("Starting up server...");
 		comms = new Comms(1030, this);
 		comms.openServerSocket();
-		loadConfiguration(path);
+		try
+		{
+			loadConfiguration("ServerState.txt");
+		}catch (FileNotFoundException e)
+		{
+			try
+			{
+				System.out.println("ServerState.txt not found. Loading from config file");
+				loadConfiguration(path);
+			} catch (FileNotFoundException e1)
+			{
+				e1.printStackTrace();
+			}
+		}
+		persistence = new DataPersistence(this);
+		persistence.saveState();
 		serverSocket = comms.getServerSocket();
 		comms.openIncomingCommsSocket();
 		
@@ -302,39 +318,51 @@ public class Server implements ServerInterface, Serializable {
 	}
 
 	@Override
-	public void loadConfiguration(String filename) {
+	public void loadConfiguration(String filename) throws FileNotFoundException {
 		
 		System.out.println("Loaded configuration: " + filename);
 		config = new Configuration(filename);
 		config.readLines();
 		
 		restaurant = config.getRestaurant();
+		
+		postcodes.clear();
         for(Postcode postcode: config.getPostcodes())
         {
             addPostcode(postcode.getName());
         }
         
+        dishes.clear();
         for(Dish dish:config.getDishes())
 		{
 			dishes.add(dish);
 		}
         
+        ingredients.clear();
 		ingredients = config.getIngredients();
+		
+		orders.clear();
 		orders = config.getOrders();
 		
+		drones.clear();
         for (Drone thisDrone: config.getDrones())
         {
             addDrone(thisDrone.getSpeed());
         }
+        
+        staff.clear();
 		for (Staff thisStaff: config.getStaff())
 		{
 			addStaff(thisStaff.getName());
 		}
+		
+		suppliers.clear();
         for (Supplier supplier: config.getSuppliers())
         {
             addSupplier(supplier.getName(),supplier.getPostcode());
         }
         
+        users.clear();
 		for(User user: config.getUsers())
         {
             for(Postcode postcode: postcodes)
@@ -345,8 +373,9 @@ public class Server implements ServerInterface, Serializable {
                 }
             }
         }
+		stockManagement.getDishStock().clear();
+		stockManagement.getIngredientStock().clear();
 		
-
 		for(Ingredient ingredient: ingredients)
 		{
 			setStock(ingredient,0);
@@ -451,7 +480,15 @@ public class Server implements ServerInterface, Serializable {
 	}
 	
 	@Override
-	public void notifyUpdate() {
+	public void notifyUpdate()
+	{
+		try
+		{
+			persistence.saveState();
+		}catch (NullPointerException e)
+		{
+		
+		}
 		this.listeners.forEach(listener -> listener.updated(new UpdateEvent()));
 	}
 

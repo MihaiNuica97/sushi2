@@ -102,6 +102,7 @@ public class Comms implements Serializable
         private Socket socket;
         private ObjectInputStream inputStream = null;
         private ObjectOutputStream outputStream = null;
+        private User user;
         
         
         ConnectedClient(Socket socket)
@@ -118,11 +119,30 @@ public class Comms implements Serializable
             }
         }
     
+        public void setUser(User user)
+        {
+            this.user = user;
+        }
+    
+        public User getUser()
+        {
+            return user;
+        }
+    
         public void initialize()
         {
             sendMessage(new Message(server.getRestaurant(),"Init"));
             sendMessage(new Message(new ArrayList<>(server.getDishes()),"Init"));
             sendMessage(new Message(new ArrayList<>(server.getPostcodes()),"Init"));
+//            ArrayList<Order> orderList = new ArrayList<>();
+//            for(Order order: server.getOrders())
+//            {
+//                if(order.getUser().getName().equals(this.getUser().getName()))
+//                {
+//                    orderList.add(order);
+//                }
+//            }
+//            sendMessage(new Message(orderList,"Init"));
         }
     
         public void sendObject(Object object)
@@ -164,6 +184,7 @@ public class Comms implements Serializable
         {
             return (Message)this.receiveObject();
         }
+        
         public void listenForMessages()
         {
             class incomingMsgThread extends Thread
@@ -281,9 +302,11 @@ public class Comms implements Serializable
                        {
                            if (verifyUser(loggedUser) != null)
                            {
+                               client.setUser(loggedUser);
                                openConnections.put(loggedUser, client);
                                System.out.println("User " + loggedUser.getName() + " has connected");
                                client.sendMessage(new Message(verifyUser(loggedUser), "Login Successful"));
+                               
                                client.listenForMessages();
                                connected = false;
                            }
@@ -297,6 +320,7 @@ public class Comms implements Serializable
                            if (verifyUser(loggedUser) == null)
                            {
                                client.sendMessage(new Message(loggedUser, "Registered"));
+                               client.setUser(loggedUser);
                                openConnections.put(loggedUser, client);
                                server.getUsers().add(loggedUser);
                                System.out.println("User " + loggedUser.getName() + " has registered");

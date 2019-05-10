@@ -2,7 +2,7 @@ package comp1206.sushi.common;
 
 import java.io.Serializable;
 
-public class Restaurant implements Serializable
+public class Restaurant extends Model implements Serializable
 {
 
 	private String name;

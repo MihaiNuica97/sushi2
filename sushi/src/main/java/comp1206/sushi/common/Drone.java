@@ -100,13 +100,12 @@ public class Drone extends Model {
     
     private void deliver(StockManagement stockManagement, Order order)
     {
+        stockManagement.deliveredOrder(order);
         new Trip(this,order.getUser().getPostcode(),"Delivery");
         order.setStatus("Complete");
+        order.notifyUpdate();
         stockManagement.getServer().getOrderStatus(order);
-        stockManagement.deliveredOrder(order);
         new Trip(this,stockManagement.getServer().getRestaurantPostcode(),"Returning");
-        
-        
     }
     
 
